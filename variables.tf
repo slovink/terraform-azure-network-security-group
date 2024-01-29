@@ -21,7 +21,7 @@ variable "environment" {
 variable "managedby" {
   type        = string
   default     = ""
-  description = ""
+  description = "managedby, slovink"
 }
 
 variable "repository" {

@@ -12,9 +12,10 @@ module "resource_group" {
 }
 
 module "vnet" {
-  depends_on  = [module.resource_group]
-  source      = "git::git@github.com:slovink/terraform-azure-vnet.git"
+  #depends_on  = [module.resource_group]
+  source      = "git@github.com:slovink/terraform-azure-vnet.git"
   label_order = ["name", "environment"]
+
 
   name                = "app"
   environment         = "test"
@@ -22,6 +23,11 @@ module "vnet" {
   location            = module.resource_group.resource_group_location
   address_space       = "10.30.0.0/22"
   enable_ddos_pp      = false
+  client_id           = "xxxxxxxxxxx"
+  client_secret       = "xxxxxxxxxxxx"
+  subscription_id     = "xxxxxxxx"
+  tenant_id           = "xxxxxxxxx"
+
 }
 
 module "subnet" {
