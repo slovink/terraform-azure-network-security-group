@@ -12,9 +12,9 @@
 <p align="center">
 
 <a href="https://www.terraform.io">
-  <img src="https://img.shields.io/badge/Terraform-v1.1.7-green" alt="Terraform">
+  <img src="https://img.shields.io/badge/Terraform-v1.7.4-green" alt="Terraform">
 </a>
-<a href="LICENSE.md">
+<a href="https://github.com/slovink/terraform-azure-network-security-group/blob/dev/LICENSE">
   <img src="https://img.shields.io/badge/License-APACHE-blue.svg" alt="Licence">
 </a>
 
@@ -44,7 +44,7 @@ Here is an example of how you can use this module in your inventory structure:
 module "network_security_group" {
   depends_on              = [module.subnet]
   resource_group_location = module.resource_group.resource_group_location
-  source                  = "../"
+  source                  = "https://github.com/slovink/terraform-azure-network-security-group.git?ref=1.0.0"
   label_order             = ["name", "environment"]
   app_name                = "app"
   environment             = "test"
@@ -78,12 +78,14 @@ module "network_security_group" {
   ```
 
 ## License
-This project is licensed under the MIT License - see the [LICENSE](https://github.com/slovink/terraform-azure-Network-security-group/blob/krishan/LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/slovink/terraform-azure-Network-security-group/blob/dev/LICENSE) file for details.
 
+## Examples
+For detailed examples on how to use this module, please refer to the [Examples](https://github.com/slovink/terraform-azure-network-security-group/tree/dev/_example) directory within this repository.
 
 
 ## Feedback
-If you come accross a bug or have any feedback, please log it in our [issue tracker](https://github.com/slovink/terraform-azure-network-security-group), or feel free to drop us an email at [devops@slovink.com](devops@slovink.com).
+If you come accross a bug or have any feedback, please log it in our [issue tracker](https://github.com/slovink/terraform-azure-network-security-group), or feel free to drop us an email at [contact@slovink.com](contact@slovink.com).
 
 If you have found it worth your time, go ahead and give us a ★ on [our GitHub](https://github.com/slovink/terraform-azure-network-security-group)!
 
@@ -92,7 +94,7 @@ If you have found it worth your time, go ahead and give us a ★ on [our GitHub]
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >=1.0.0 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >=1.7.4 |
 | <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | >=3.87.0 |
 
 ## Providers
